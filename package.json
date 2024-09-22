@@ -1,0 +1,12 @@
+{
+    "name": "4.-react_pro---fsc-task-manager-backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start:dev": "nodemon index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
