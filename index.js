@@ -24,6 +24,19 @@ app.post("/tasks", async (req, res) => {
         res.status(500).send(error.message);
     }
 });
+app.delete("/tasks/:id", async (req, res) => {
+    try {
+        const taskId = req.params.id;
+        const taskToDelete = await TaskModel.findById(taskId)
+        if(!taskToDelete) {
+            return res.status(500).send('This task has not been found!')
+        }
+        const deletedTask = await TaskModel.findByIdAndDelete(taskId);
+        res.status(200).send(deletedTask);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+});
 app.listen(8000, () =>
     console.log("Listening on port 8000!\nConnecting to MongoDB . . .")
 );
