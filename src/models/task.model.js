@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongosee");
+const { Schema, model } = require("mongoose");
 
 const TaskSchema = Schema({
     description: {
